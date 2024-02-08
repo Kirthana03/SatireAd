@@ -9,9 +9,10 @@
     <script src = "evt-toggle.js"></script>
     <script src = "Left-toggle.js"></script>
     <title>Break it Down.</title>
+
 </head>
 <body>
-    <a-scene outline>
+    <a-scene xr-mode-ui="cardboardModeEnabled: true">
         <a-assets>
           <a-asset-item id="Scene" src="Assets/MacropadRender01.glb"></a-asset-item>
           <a-asset-item id="KeyCapO" src="Assets/KeyCap.obj"></a-asset-item>
@@ -22,12 +23,14 @@
           <a-asset-item id="EM1" src="Assets/L1.mtl"></a-asset-item>
           <a-asset-item id="EM2" src="Assets/L2.mtl"></a-asset-item>
           <a-asset-item id="EM3" src="Assets/L3.mtl"></a-asset-item>
+          <audio id="A10" src="Assets/Let It Me - Jeremy Black.mp3" preload="true"></audio>
           <img id="A1" src="Assets/A1.png">
           <img id="A2" src="Assets/A2.png">
           <img id="A3" src="Assets/A3.png">
           <img id="A4" src="Assets/A4.png">
           <img id="A5" src="Assets/A5.png">
         </a-assets>
+        <a-sound src="#A10" autoplay="true"></a-sound>
         <a-entity oculus-touch-controls="hand: right"></a-entity>
         <a-entity id="rig" position = "0 0 50"
             movement-controls>
