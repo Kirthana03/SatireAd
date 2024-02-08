@@ -23,6 +23,10 @@
           <a-asset-item id="EM2" src="Assets/L2.mtl"></a-asset-item>
           <a-asset-item id="EM3" src="Assets/L3.mtl"></a-asset-item>
           <img id="A1" src="Assets/A1.png">
+          <img id="A2" src="Assets/A2.png">
+          <img id="A3" src="Assets/A3.png">
+          <img id="A4" src="Assets/A4.png">
+          <img id="A5" src="Assets/A5.png">
         </a-assets>
         <a-entity oculus-touch-controls="hand: right"></a-entity>
         <a-entity id="rig" position = "0 0 50"
@@ -52,13 +56,13 @@
                 height="2.16"
                 animation = "property: position; to:0 17 0; dir:alternate; dur:3000; loop:true"
                 evt-toggle></a-image>
-        <a-image id="L1" src="#A1" 
+        <a-image id="L1" src="#A2" 
                   position="-80 5 0"
                   scale = "6 6 1"
                   width="3.6"
                   height="2.16"
                   opacity = "0"></a-image>
-        <a-image id="L2" src="#A1" 
+        <a-image id="L2" src="#A3" 
                   position="80 5 0"
                   scale = "6 6 1"
                   width="3.6"
@@ -68,7 +72,7 @@
 
                      
         <a-obj-model id="EL01" src="#EL1"
-                     material= "color:#1E1E1E"
+                     material= "color:#6E00B1"
                      position="-180 5 40"
                      rotation="-70 -45 0"
                      scale = "7 7 7 "
@@ -76,7 +80,7 @@
                      Left-toggle>
                      <!-- <a-entity id="light03" light="type:directional" color="#FFFFFF" intensity="30" position="0 0 20" cast-shadow="true"></a-entity> -->
         </a-obj-model>
-        <a-image id="C1" src="#A1" 
+        <a-image id="C1" src="#A4" 
                     position="-80 4 80"
                     scale = "6 6 1"
                     width="3.6"
@@ -87,7 +91,7 @@
                     opacity = "1"></a-image>
 
         <a-obj-model id="EL02" src="#EL2"
-                    material= "color:#1E1E1E"
+                    material= "color:#B1008A"
                     position="-180 5 40"
                     rotation="-70 -45 0"
                     scale = "7 7 7 "
@@ -97,7 +101,7 @@
        </a-obj-model>
 
        <a-obj-model id="EL03" src="#EL3"
-       material= "color:#1E1E1E"
+       material= "color:#0B0B0B"
        position="-180 5 45"
        rotation="-70 -45 0"
        scale = "7 7 7 "
@@ -105,28 +109,32 @@
        Left-toggle>
        <!-- <a-entity id="light03" light="type:directional" color="#FFFFFF" intensity="30" position="0 0 20" cast-shadow="true"></a-entity> -->
        </a-obj-model>
-       <a-image id="C1" src="#A1" 
-                   position="-80 4 80"
-                   scale = "6 6 1"
-                   width="3.6"
-                   height="2.16"
-                   rotation="0 90 0"
-                   side="double"
-                   animation = "property: position; to:-80 7 80; dir:alternate; dur:3000; loop:true"
-                   opacity = "1"></a-image>
+
 
      <a-obj-model id="KC01" src="#KeyCapO" 
-                   material= "color:#1E1E1E"
+                   material= "color:#6E00B1"
                    position="120 0 80"
+                   rotation="10 90 90"
+                   animation = "property: rotation; to:-0 7 360; dir:alternate; dur:4700; loop:true"
+                   scale = "7 7 7 "></a-obj-model>
+    <a-obj-model id="KC01" src="#KeyCapO" 
+                   material= "color:#B1008A"
+                   position="150 -3 80"
                    rotation="10 90 90"
                    animation = "property: rotation; to:-0 7 360; dir:alternate; dur:4500; loop:true"
                    scale = "7 7 7 "></a-obj-model>
-    <a-image id="C1" src="#A1" 
-                   position="60 17 80"
+    <a-obj-model id="KC01" src="#KeyCapO" 
+                   material= "color:#B10035"
+                   position="180 -3 80"
+                   rotation="10 90 90"
+                   animation = "property: rotation; to:-0 7 360; dir:alternate; dur:4300; loop:true"
+                   scale = "7 7 7 "></a-obj-model>
+    <a-image id="C1" src="#A5" 
+                   position="40 17 60"
                    scale = "6 6 1"
                    width="3.6"
                    height="2.16"
                    rotation="0 -90 0"
                    side="double"
-                   animation = "property: position; to:60 19 80; dir:alternate; dur:3000; loop:true"
+                   animation = "property: position; to:40 19 60; dir:alternate; dur:3000; loop:true"
                    opacity = "1"></a-image>
