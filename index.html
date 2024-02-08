@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/takahirox/aframe-outline/master/build/aframe-outline.min.js"></script>
+    <script src = "state-toggle.js"></script>
+    <script src = "evt-toggle.js"></script>
+    <script src = "Left-toggle.js"></script>
+    <title>Break it Down.</title>
+</head>
+<body>
+    <a-scene outline>
+        <a-assets>
+          <a-asset-item id="Scene" src="Assets/MacropadRender01.glb"></a-asset-item>
+          <a-asset-item id="KeyCapO" src="Assets/KeyCap.obj"></a-asset-item>
+          <a-asset-item id="KeyCapM" src="Assets/KeyCap.mtl"></a-asset-item>
+          <a-asset-item id="EL1" src="Assets/L1.obj"></a-asset-item>
+          <a-asset-item id="EL2" src="Assets/L2.obj"></a-asset-item>
+          <a-asset-item id="EL3" src="Assets/L3.obj"></a-asset-item>
+          <a-asset-item id="EM1" src="Assets/L1.mtl"></a-asset-item>
+          <a-asset-item id="EM2" src="Assets/L2.mtl"></a-asset-item>
+          <a-asset-item id="EM3" src="Assets/L3.mtl"></a-asset-item>
+          <img id="A1" src="Assets/A1.png">
+        </a-assets>
+        <a-entity oculus-touch-controls="hand: right"></a-entity>
+        <a-entity id="rig" position = "0 0 50"
+            movement-controls>
+            <a-entity camera
+            position="0 1.6 0"
+            look-controls
+            wasd-controls="acceleration:100">
+            <a-cursor
+            geometry="primitive:sphere ; radius:0.008"
+            color="#FFF281">
+          </a-cursor> 
+          </a-entity>
+        </a-entity>
+
+        <a-sky color="#000000"></a-sky>
+        <a-entity gltf-model="#Scene" position="0 -4 0" scale="5 5 5" rotation="10 45 0"
+        state-toggle
+                  ></a-entity>
+        <a-entity light="type:ambient" color="#FFFFFF" intensity="20" ></a-entity>
+        <a-entity id="light01" light="type:directional" color="#FFFFFF" intensity="2" position="10 10 0" cast-shadow="true"></a-entity>
+        <a-entity id="light02" light="type:directional" color="#FFFFFF" intensity="2" position="10 10 40" cast-shadow="true"></a-entity>
+        <a-image src="#A1" 
+                position="0 15 0"
+                scale = "6 6 1"
+                width="3.6"
+                height="2.16"
+                animation = "property: position; to:0 17 0; dir:alternate; dur:3000; loop:true"
+                evt-toggle></a-image>
+        <a-image id="L1" src="#A1" 
+                  position="-80 5 0"
+                  scale = "6 6 1"
+                  width="3.6"
+                  height="2.16"
+                  opacity = "0"></a-image>
+        <a-image id="L2" src="#A1" 
+                  position="80 5 0"
+                  scale = "6 6 1"
+                  width="3.6"
+                  height="2.16"
+                  opacity = "0"></a-image>
+
+
+                     
+        <a-obj-model id="EL01" src="#EL1"
+                     material= "color:#1E1E1E"
+                     position="-180 5 40"
+                     rotation="-70 -45 0"
+                     scale = "7 7 7 "
+                     animation = "property: rotation; to:-0 7 360; dir:alternate; dur:15000; loop:true"
+                     Left-toggle>
+                     <!-- <a-entity id="light03" light="type:directional" color="#FFFFFF" intensity="30" position="0 0 20" cast-shadow="true"></a-entity> -->
+        </a-obj-model>
+        <a-image id="C1" src="#A1" 
+                    position="-80 4 80"
+                    scale = "6 6 1"
+                    width="3.6"
+                    height="2.16"
+                    rotation="0 90 0"
+                    side="double"
+                    animation = "property: position; to:-80 7 80; dir:alternate; dur:3000; loop:true"
+                    opacity = "1"></a-image>
+
+        <a-obj-model id="EL02" src="#EL2"
+                    material= "color:#1E1E1E"
+                    position="-180 5 40"
+                    rotation="-70 -45 0"
+                    scale = "7 7 7 "
+                    animation = "property: rotation; to:-0 7 360; dir:alternate; dur:15000; loop:true"
+                    Left-toggle>
+                    <!-- <a-entity id="light03" light="type:directional" color="#FFFFFF" intensity="30" position="0 0 20" cast-shadow="true"></a-entity> -->
+       </a-obj-model>
+
+       <a-obj-model id="EL03" src="#EL3"
+       material= "color:#1E1E1E"
+       position="-180 5 45"
+       rotation="-70 -45 0"
+       scale = "7 7 7 "
+       animation = "property: rotation; to:-0 7 360; dir:alternate; dur:15000; loop:true"
+       Left-toggle>
+       <!-- <a-entity id="light03" light="type:directional" color="#FFFFFF" intensity="30" position="0 0 20" cast-shadow="true"></a-entity> -->
+       </a-obj-model>
+       <a-image id="C1" src="#A1" 
+                   position="-80 4 80"
+                   scale = "6 6 1"
+                   width="3.6"
+                   height="2.16"
+                   rotation="0 90 0"
+                   side="double"
+                   animation = "property: position; to:-80 7 80; dir:alternate; dur:3000; loop:true"
+                   opacity = "1"></a-image>
+
+     <a-obj-model id="KC01" src="#KeyCapO" 
+                   material= "color:#1E1E1E"
+                   position="120 0 80"
+                   rotation="10 90 90"
+                   animation = "property: rotation; to:-0 7 360; dir:alternate; dur:4500; loop:true"
+                   scale = "7 7 7 "></a-obj-model>
+    <a-image id="C1" src="#A1" 
+                   position="60 17 80"
+                   scale = "6 6 1"
+                   width="3.6"
+                   height="2.16"
+                   rotation="0 -90 0"
+                   side="double"
+                   animation = "property: position; to:60 19 80; dir:alternate; dur:3000; loop:true"
+                   opacity = "1"></a-image>
